@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+html, body {
+    /* background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); */
+    font-family: 'Montserrat' !important;
+}
+
+#chatroom {
+    position:relative;
+    width : 50%;
+    min-height: 90vh;
+    float:right;
+    border : 2px solid black;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 25px;
+    padding:10px;
+}
+
+.table td {
+    border:none !important;
+}
+
+.react-customscroll-scrollbar-area {
+    right:0;
+}
+.react-customscroll-frame {
+    padding : 0 10px 0 0
+}
+.type_msg{
+    background-color: rgba(0,0,0,0.3) !important;
+    border:0 !important;
+    color:white !important;
+    height: 60px !important;
+    overflow-y: auto;
+}
+
+.type_msg:focus, .send_btn:focus{
+    box-shadow:none !important;
+    outline:0px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.send_btn{
+	border-radius: 0 15px 15px 0 !important;
+	background-color: rgba(0,0,0,0.2) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.card-footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.message {
+    color: antiquewhite
+}
+
+.user {
+    border-radius: 50px;
+    border : 2px solid white;
+    min-width:10px;
+    width : 7vh;
+    height:7vh;
+    text-align: center;
+    padding-top:.5%;
+    font-size:4vh;
+}
+
+.position-fixed {
+    background-image: url("assets/jens-johnsson-apz-nFR0NlQ-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width:100%;
+    height:100%;
+}
