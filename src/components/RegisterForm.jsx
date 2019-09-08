@@ -50,8 +50,8 @@ class RegisterForm extends Component {
                     <div className="form-group col-md-12">
                         <input type="password" className="form-control" id="inputPassword4" placeholder="Password"/>
                     </div>
-                    <div className="form-group col-md-12">
-                        <input type="submit" className="form-control" id="inputSubmit" placeholder="Register"/>
+                    <div className="form-group col-md-6 m-auto">
+                    <button type="submit" className="form-control btn btn-secondary">Register</button>
                     </div>
                 </form>
                 <Link to="/login">Log in</Link>

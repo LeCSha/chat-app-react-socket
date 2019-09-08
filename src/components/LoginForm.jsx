@@ -39,17 +39,19 @@ class LoginForm extends Component {
     }
     render(){
         return (
-            <div>
-                <form className="row" action="/login" method="post" onSubmit={this.submitForm}>
-                    <div className="form-group col-md-6">
+            <div className="col-lg-5 col-md-6 m-auto">
+                <form action="/login" method="post" onSubmit={this.submitForm}>
+                    <div className="form-group col-md-12">
                         <input type="email" className="form-control" id="inputEmail4" placeholder="Email"/>
                     </div>
-                    <div className="form-group col-md-6">
+                    <div className="form-group col-md-12">
                         <input type="password" className="form-control" id="inputPassword4" placeholder="Password"/>
                     </div>
-                    <button type="submit" className="m-auto btn btn-secondary">Log in</button>
+                    <div className="form-group m-auto col-md-6">
+                        <button type="submit" className="form-control btn btn-secondary">Log in</button>
+                    </div>
                 </form>
-                <Link to="/register">Sign in</Link>
+                <Link to="/register">Register</Link>
                 <Route path="/register" component={Register} />
             </div>
             )
