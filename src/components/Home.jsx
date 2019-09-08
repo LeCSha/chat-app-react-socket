@@ -1,6 +1,8 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Link} from 'react-router-dom';
 import routes from "../routes"
+import Login from "./LoginForm"
+import Register from "./RegisterForm"
 
 const styleHomeComponent = {
     // maxHeight : '500px',
@@ -18,17 +20,16 @@ const Home = () => {
     return (
         <div className="container-fluid">
             <div className="col-md-6 col-lg-4 m-auto p-md-2 p-lg-5" style = {styleHomeComponent}>
-                <Switch>
-                    {routes.map((r, i) => {
-                        return r.Component ? (
-                        <Route 
-                        key={i} 
-                        path={r.path} 
-                        exact={r.exact} 
-                        render={p => <r.Component {...p}/>}/>
-                        ) : null
-                    })}
-                </Switch>
+                <ul>
+                <li>
+                    <Link to="/register">Sign in</Link>
+                </li>
+                <li>
+                    <Link to="/login">Log in</Link>
+                </li>
+                </ul>
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
             </div>
         </div>
     )

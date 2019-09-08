@@ -48,7 +48,6 @@ class LoginForm extends Component {
                     </div>
                     <button type="submit" className="m-auto btn btn-secondary">Log in</button>
                 </form>
-                <button type="button" className="m-auto btn btn-secondary"><a tag={Link} to="/register" >Register</a></button>
             </div>
             )
         }
