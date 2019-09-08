@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import socketClient from 'socket.io-client';
 import CustomScroll from 'react-customscroll'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const styleChatMessages = {
     minHeight: '350px',
@@ -35,7 +37,7 @@ class ChatMessages extends Component  {
                     {messages.map(m => {
                         return (
                             <div>
-                                <span className="message"><i className="user fas fa-user"></i> {m.username}</span>
+                                <span className="message"><FontAwesomeIcon icon={faUser}/> {m.username}</span>
                                 <p className="message">{m.message}</p>
                             </div>
                         )

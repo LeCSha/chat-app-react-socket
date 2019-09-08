@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {Link, Route} from 'react-router-dom'
+import Login from "./LoginForm"
 
 
 class RegisterForm extends Component {
@@ -37,7 +39,7 @@ class RegisterForm extends Component {
     }
     render(){
         return (
-            <div>
+            <div className="col-lg-5 col-md-6 m-auto">
                 <form action="/register" method="post" onSubmit={this.submitForm}>
                     <div className="form-group col-md-12">
                         <input type="email" className="form-control" id="inputEmail4" placeholder="Email"/>
@@ -48,8 +50,12 @@ class RegisterForm extends Component {
                     <div className="form-group col-md-12">
                         <input type="password" className="form-control" id="inputPassword4" placeholder="Password"/>
                     </div>
-                    <button type="submit" className="m-auto btn btn-secondary">Register</button>
+                    <div className="form-group col-md-12">
+                        <input type="submit" className="form-control" id="inputSubmit" placeholder="Register"/>
+                    </div>
                 </form>
+                <Link to="/login">Log in</Link>
+                <Route path="/login" component={Login} />
             </div>
             )
         }

@@ -8,9 +8,10 @@ class App extends Component {
       return (
         <React.Fragment>
           <BrowserRouter>
-            <Switch>
+            <Layout/>
+            {/* <Switch>
               <Route path="/" component={Layout}/>
-            </Switch>
+            </Switch> */}
           </BrowserRouter>
         </React.Fragment>
       );

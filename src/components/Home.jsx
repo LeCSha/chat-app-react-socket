@@ -18,19 +18,17 @@ const styleHomeComponent = {
 }
 const Home = () => {
     return (
-        <div className="container-fluid">
-            <div className="col-md-6 col-lg-4 m-auto p-md-2 p-lg-5" style = {styleHomeComponent}>
-                <ul>
-                <li>
+        <div className="position-relative">
+            <ul className="list-group">
+                <li className="list-group-item">
                     <Link to="/register">Sign in</Link>
                 </li>
-                <li>
+                <li className="list-group-item">
                     <Link to="/login">Log in</Link>
                 </li>
-                </ul>
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Login} />
-            </div>
+            </ul>
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
         </div>
     )
 }

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import socketClient from 'socket.io-client';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+const element = <FontAwesomeIcon icon={faCoffee} />
 
 const socket = socketClient('http://localhost:5000')
 
@@ -50,7 +54,7 @@ class ChatSendMessage extends Component {
                     <div class="input-group">
                         <textarea name="" className="type_msg form-control type_msg" onChange={this.inputChange} value={this.state.value} placeholder="Type your message..."></textarea>
                         <div className="input-group-append">
-                            <button style={styleButton} className="input-group-text send_btn" type="submit" ><i className="fas fa-location-arrow">Se</i></button>
+                            <button style={styleButton} className="input-group-text send_btn" type="submit" ><FontAwesomeIcon icon={faCoffee}/></button>
                         </div>
                     </div>
                 </div>

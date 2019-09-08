@@ -23,19 +23,19 @@ class Header extends Component {
     render(){
         return (
         <div>
-            <Navbar color="light" light expand="md">
-            <NavbarBrand tag={Link} to="/">Chat App</NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <NavLink tag={Link} to="/chat">Room Chat</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={Link} to="/livevisitors">Live Visitors</NavLink>
-                    </NavItem>
-                </Nav>
-            </Collapse>
+            <Navbar expand="md">
+                <NavbarBrand tag={Link} to="/">Chat App</NavbarBrand>
+                <NavbarToggler onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink tag={Link} to="/chat">Room Chat</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} to="/livevisitors">Live Visitors</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
             </Navbar>
         </div>
         )
