@@ -6,13 +6,16 @@ const port = 5000
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
-http.listen(port, () => console.log(`listening on port ${port}`))
+const cors = require('cors')
+const AuthRoute = require('./routes/auth')
+const ChangeUserName = require('./routes/changeusername')
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
 
 //import routes
-const AuthRoute = require('./routes/auth')
 
 dotenv.config()
 
@@ -26,6 +29,7 @@ app.get('/chat', (req, res) => {res.render('chat')})
 //routes middleware
 // app.use(express.static('public/'))
 app.use('/', AuthRoute)
+app.use('/', ChangeUserName)
 
 //listen on port 3000
 
@@ -62,22 +66,16 @@ io.on('connection', (socket) => {
     socket.on('new_visitor', user => {
         
         socket.user = user;
-        console.log('user :', socket.username)
-        // socket.username = 
-        socket.emit('change_username', {username : 'Anonymous'})
         emitVisitors();
     })
     socket.on('new_message', user => {
-        io.sockets.emit('new_message', {message : user.message, username : socket.username})
-    })
-    socket.on('change_username', user => { 
-        socket.username = user.username
+        io.sockets.emit('new_message', {message : user.message, username : user.username})
     })
 
     socket.on('typing', ({room}) => {
         socket.to(room).emit('typing', 'Someone is typing')
     })
-
+    
     socket.on('stopped_typing', ({room}) => {
         socket.to(room).emit('stopped_typing')
     })
@@ -87,7 +85,7 @@ io.on('connection', (socket) => {
             name:"Creator",
             message:"Welcome to the Chat"
         })
-
+        
         socket.broadcast.emit('server_message', {
             name:"Creator",
             message:`${user.name} just join the chat`
@@ -97,7 +95,7 @@ io.on('connection', (socket) => {
     })
     
     socket.on('disconnect', ({user}) => {
-
+        
         if (user){
             socket.broadcast.emit('server_message', {
                 name:"Creator",
@@ -105,6 +103,7 @@ io.on('connection', (socket) => {
             })
         }
     })
-
+    
 })
-        
+
+http.listen(port, () => console.log(`listening on port ${port}`))

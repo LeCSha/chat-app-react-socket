@@ -2,6 +2,7 @@ import React from 'react';
 import ChatMessages from './ChatMessages';
 import LiveVisitors from './LiveVisitors'
 import ChatSendMessage from './ChatSendMessage'
+import ChangeUsername from './ChangeUsername'
 
 
 const styleChatComponent = {
@@ -17,10 +18,19 @@ const styleChatComponent = {
 }
 
 const ChatTemplate = () => {
+
+    const newUsername = username => {
+        localStorage.setItem('username', username)
+    }
     return (
         <div className="container-fluid row">
-            <div className="col-md-3 ml-5" style = {styleChatComponent}>
-                <LiveVisitors/>
+            <div className="col">
+                <div className="ml-5">
+                    <ChangeUsername change={newUsername}/>
+                </div>
+                <div className="col-md-3 ml-5">
+                    <LiveVisitors/>
+                </div>
             </div>
             <div className="col-md-8 ml-3 pr-0 overflow-hidden" style = {styleChatComponent}>
                 <ChatMessages/>

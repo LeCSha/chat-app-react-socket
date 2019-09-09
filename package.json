@@ -12,6 +12,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.3.1",
     "concurrently": "^4.1.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "eslint": "^6.3.0",
     "eslint-utils": "^1.4.2",

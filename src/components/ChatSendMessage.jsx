@@ -3,8 +3,6 @@ import socketClient from 'socket.io-client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-const element = <FontAwesomeIcon icon={faCoffee} />
-
 const socket = socketClient('http://localhost:5000')
 
 const styleButton = {
@@ -22,19 +20,9 @@ class ChatSendMessage extends Component {
     }
     sendMessage = (event) => {
         if (this.state.value) {
-            socket.emit('new_message', {username: socket.username, message : this.state.value})
-            let item = []
-            if (localStorage.getItem('UserMessage')){
-                const itemJSON = localStorage.getItem('UserMessage')
-                item = JSON.parse(itemJSON)
-                console.log(item)
-                // item = itemJSON && JSON.Parse(itemJSON)
-                // console.log(itemJSON)
-            }
-            let newItem = {username : socket.username, message : this.state.value} 
-            item = [...item, newItem]
-            localStorage.setItem('UserMessage', JSON.stringify(item))
-            console.log(localStorage.getItem('UserMessage'))
+            if (!localStorage.getItem('username')) localStorage.setItem('username','Anonymus')
+            const username = localStorage.getItem('username')
+            socket.emit('new_message', {username: username, message : this.state.value})
             this.setState({value : ''})
         }
         event.preventDefault();

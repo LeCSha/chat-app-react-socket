@@ -19,7 +19,7 @@ class LoginForm extends Component {
     
     getInfosFromPost = async () => {
         try {
-            return await axios.post('/login')
+            return await axios.post('http://localhost:5000/login')
         } catch (error) {
             console.error(error)
         }
@@ -33,8 +33,8 @@ class LoginForm extends Component {
         }
     }
     submitForm = event => {
-        // fetch('http://localhost:3000/login').then(res => console.log(res.body.email))
-        this.getInfosUser()
+        fetch('http://localhost:5000/login').then(res => console.log(res))
+        // this.getInfosUser()
         event.preventDefault();
     }
     render(){

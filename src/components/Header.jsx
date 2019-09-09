@@ -24,7 +24,7 @@ class Header extends Component {
         return (
         <div>
             <Navbar expand="md">
-                <NavbarBrand tag={Link} to="/">Chat App</NavbarBrand>
+                <NavbarBrand tag={Link} to="/">Chat App !</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>

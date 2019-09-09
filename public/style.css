@@ -85,3 +85,16 @@ html, body {
 .navbar a {
     color:antiquewhite !important;
 }
+
+.username-title{
+    margin:10px;
+    color:aqua
+}
+.username-block {
+    margin: 0 auto !important
+}
+.username-form {
+    background-color: rgba(0, 0, 0, .4);
+    padding: 5px;
+    grid-auto-rows: max-content !important;
+}
