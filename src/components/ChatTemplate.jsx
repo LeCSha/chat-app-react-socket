@@ -28,11 +28,11 @@ const ChatTemplate = () => {
                 <div className="ml-5">
                     <ChangeUsername change={newUsername}/>
                 </div>
-                <div className="col-md-3 ml-5">
+                <div className="ml-5">
                     <LiveVisitors/>
                 </div>
             </div>
-            <div className="col-md-8 ml-3 pr-0 overflow-hidden" style = {styleChatComponent}>
+            <div className="col-lg-8 ml-3 pr-0 overflow-hidden" style = {styleChatComponent}>
                 <ChatMessages/>
                 <ChatSendMessage/>
             </div>

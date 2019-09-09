@@ -6,8 +6,8 @@ import RegisterForm from "./components/RegisterForm";
 
 export default [
     
-    {path:'/', exact: true, Component : Home},
-    {path:'/chat', exact: true, Component : ChatTemplate},
+    {path:'/', exact: true, Component : ChatTemplate},
+    {path:'/chat', exact: true, Component : Home},
     {path:'/livevisitors', exact: true, Component : LiveVisitors},
     {path:'/login', exact: true, Component : LoginForm},
     {path:'/register', exact: true, Component : RegisterForm}

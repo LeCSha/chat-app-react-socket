@@ -87,7 +87,6 @@ html, body {
 }
 
 .username-title{
-    margin:10px;
     color:aqua
 }
 .username-block {
@@ -97,4 +96,25 @@ html, body {
     background-color: rgba(0, 0, 0, .4);
     padding: 5px;
     grid-auto-rows: max-content !important;
+}
+
+.username-input {
+    text-align:left;
+    background-color:rgba(0, 0, 0, .5);
+    border:none;
+    border-radius:5px 0 0 5px
+}
+
+.live-block {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 5px;
+    grid-auto-rows: max-content !important;
+    height:350px;
+    overflow: hidden
+}
+.live-block tbody {
+    color:#6b747c
+}
+.live-title {
+    color:chartreuse
 }

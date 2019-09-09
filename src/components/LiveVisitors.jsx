@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import axios from 'axios'
+import CustomScroll from 'react-customscroll'
 
 import socketClient from "socket.io-client"
 
@@ -58,21 +59,17 @@ class LiveVisitors extends Component {
     }
     render(){
         return (
-            <React.Fragment>
-                <h2>Live Visitors</h2>
-                <Table size='sm'>
-                    {/* <thead>
-                        <tr>
-                            <th></th>
-                            <th>Country</th>
-                            <th>City</th>
-                        </tr>
-                    </thead> */}
-                    <tbody>
-                        {this.renderTableBody()}
-                    </tbody>
-                </Table>
-            </React.Fragment>
+            <div className="live-block p-5 mt-2">
+                <h4 className="live-title">Live Visitors</h4>
+                <CustomScroll style={{right:'0'}} scrollAreaColor="rgba(127, 255, 0, .2)" scrollWidth="10px" scrollBarRadius="20px" scrollBarColor="rgba(127, 255, 0, .3)">
+                    <Table size='sm'>
+                        <tbody>
+                            {this.renderTableBody()}
+                        </tbody>
+                    </Table>
+                </CustomScroll>
+            </div>
+            // </React.Fragment>
             
         )
     }
