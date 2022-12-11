@@ -16,7 +16,7 @@
     "dotenv": "^8.1.0",
     "eslint": "^6.3.0",
     "eslint-utils": "^1.4.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http": "0.0.0",
     "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
